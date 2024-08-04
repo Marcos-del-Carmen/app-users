@@ -12,6 +12,7 @@ export class UserComponent {
   @Input() users: User[] = [];
 
   @Output() idUserEventEmitter = new EventEmitter();
+  @Output() selectedUserEventEmitter = new EventEmitter();
 
   onRemoveUser(id: number) : void {
     Swal.fire({
@@ -35,4 +36,8 @@ export class UserComponent {
     });
   }
 
+  onSelectedUser(user: User): void {
+    console.log('Informacion del usuario ', user)
+    this.selectedUserEventEmitter.emit(user);
+  }
 }

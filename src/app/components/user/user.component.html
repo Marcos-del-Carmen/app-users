@@ -3,7 +3,7 @@
         No hay registros en el sistema
     </div>
 } @else {
-    <table>
+    <table class="table">
         <thead>
             <tr>
                 <!-- <th>Id</th> -->
@@ -11,6 +11,7 @@
                 <th>Last name </th>
                 <th>Email</th>
                 <th>User name</th>
+                <th colspan="2">Actions</th>
             </tr>
         </thead>
         <tbody>
@@ -24,6 +25,11 @@
                     <td>
                         <button class="btn btn-danger btn-sm" (click)="onRemoveUser(user.id)">
                             Remove
+                        </button>
+                    </td>
+                    <td>
+                        <button class="btn btn-warning btn-sm" (click)="onSelectedUser(user)">
+                            Edit
                         </button>
                     </td>
                 </tr>
