@@ -11,10 +11,10 @@ import { User } from '../../models/user';
 })
 
 export class FormUserComponent {
-  @Input() user: User;
+  user: User;
   @Input() banderaBoton : boolean;
   @Output() banderaBotonEventEmitter = new EventEmitter();
-  @Output() newUserEventEmitter = new EventEmitter();
+  newUserEventEmitter = new EventEmitter();
 
   constructor() {
     this.user = new User;
@@ -24,7 +24,7 @@ export class FormUserComponent {
   onSubmit(userFrom: NgForm) : void {
     if(userFrom.valid) {
       this.newUserEventEmitter.emit(this.user);
-      console.log('¡Nuevo! ',this.user);
+      // console.log('¡Nuevo! ',this.user);
     } else {
       console.log('El formulario es invalido para crear')
     }
