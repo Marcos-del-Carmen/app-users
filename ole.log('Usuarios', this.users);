@@ -1,0 +1,23 @@
+[33mcommit 1d9d91d3b8b72155573cd9290f9d0f060f0addcc[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmaster[m[33m)[m
+Author: Marcos del Carmen <marcosdelcarmen768@gmail.com>
+Date:   Thu Aug 8 00:03:24 2024 -0600
+
+    Rutas en los usuarios
+
+[33mcommit 92298e088de8a792920e98c2fa69a044f9b71387[m[33m ([m[1;31morigin/master[m[33m)[m
+Author: Marcos del Carmen <marcosdelcarmen768@gmail.com>
+Date:   Sun Aug 4 12:46:16 2024 -0600
+
+    Terminacion de la seccion 7 se agregan, eliminan y editan usuarios de manera local
+
+[33mcommit 976675c276873cff65f1574b52e9ef523b5d70ef[m
+Author: Marcos del Carmen <marcosdelcarmen768@gmail.com>
+Date:   Sun Aug 4 08:29:34 2024 -0600
+
+    Formulario para agregar un usuario
+
+[33mcommit 800d5ab278f297a01d6150cfcd304920c475252b[m[33m ([m[1;31morigin/dev-marcos[m[33m, [m[1;32mdev-marcos[m[33m)[m
+Author: Marcos del Carmen <marcosdelcarmen768@gmail.com>
+Date:   Fri Jul 26 23:02:33 2024 -0600
+
+    initial commit

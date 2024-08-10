@@ -34,7 +34,7 @@
                 <div>
                     <input placeholder="Email" [(ngModel)]="user.email" name="email" type="email"
                         class="form-control my-2" required #email="ngModel" email />
-                    @if(email.invalid && ( name.dirty || email.touched)) {
+                    @if(email.invalid && ( email.dirty || email.touched)) {
                     @if(email.errors!['required']) {
                     <div class="text-danger">
                         <p class="mb-0">Rellena el campo de correo</p>
@@ -49,7 +49,7 @@
                 <div>
                     <input placeholder="User name" [(ngModel)]="user.username" name="username" type="text"
                         class="form-control my-2" required #username="ngModel" />
-                    @if(username.invalid && ( name.dirty || username.touched)) {
+                    @if(username.invalid && ( username.dirty || username.touched)) {
                     @if(username.errors!['required']) {
                     <div class="text-danger">
                         <p class="mb-0">Rellena el campo nombre de usuario</p>
@@ -60,7 +60,7 @@
                 <div>
                     <input placeholder="Password" [(ngModel)]="user.password" name="password" type="password"
                         class="form-control my-2" required #password="ngModel" maxlength="6" pattern="[a-zA-Z0-9]*"/>
-                    @if(password.invalid && ( name.dirty || password.touched)) {
+                    @if(password.invalid && ( password.dirty || password.touched)) {
                     @if(password.errors!['required']) {
                     <div class="text-danger">
                         <p class="mb-0">Rellena el campo contraseña</p>

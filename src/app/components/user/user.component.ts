@@ -4,6 +4,7 @@ import Swal from 'sweetalert2';
 import { Router, RouterModule } from '@angular/router';
 import { NavBarComponent } from '../nav-bar/nav-bar.component';
 import { UserService } from '../../services/user.service';
+import { SharingDataService } from '../../services/sharing-data.service';
 
 @Component({
   selector: 'user',
@@ -15,16 +16,20 @@ export class UserComponent {
   title: string = 'Aplicación de usuarios';
   users: User[] = [];
 
-  idUserEventEmitter = new EventEmitter();
-  electedUserEventEmitter = new EventEmitter();
-
-  constructor(private router: Router, private _serviceUser: UserService) {
+  constructor(
+    private router: Router, 
+    private _serviceSharingData: SharingDataService, 
+    private _serviceUser: UserService
+  ) {
+    
     if(this.router.getCurrentNavigation()?.extras.state) {
       this.users = this.router.getCurrentNavigation()?.extras.state!['users'];
     } else {
       this._serviceUser.findAll().subscribe(data => this.users = data);
     }
+    console.log('Usuarios', this.users);
   }
+
   onRemoveUser(id: number) : void {
     Swal.fire({
       title: "¿Estas seguro de eliminar?",
@@ -37,7 +42,7 @@ export class UserComponent {
       cancelButtonText: 'No'
     }).then((result) => {
       if (result.isConfirmed) {
-        this.idUserEventEmitter.emit(id);
+        this._serviceSharingData.idUserEventEmitter.emit(id);
         Swal.fire({
           title: "Se elimino!",
           text: "El registro se elimino correctamente.",
@@ -48,7 +53,7 @@ export class UserComponent {
   }
 
   onSelectedUser(user: User): void {
-    console.log('Informacion del usuario ', user)
-    // this.selectedUserEventEmitter.emit(user);
+    // this._serviceSharingData.selectedUserEventEmitter.emit(user);
+    this.router.navigate(['/users/edit', user.id], {state: {user}});
   }
 }
